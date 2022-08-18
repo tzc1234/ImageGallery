@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct ImageData: Codable {
+struct ImageData: Codable, Identifiable {
     let id, author: String
     let width, height: Int
     let url, downloadURL: String

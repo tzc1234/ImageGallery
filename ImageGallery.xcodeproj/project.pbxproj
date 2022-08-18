@@ -16,6 +16,10 @@
 		BE442FF328AE4DF9001729A5 /* EndPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE442FF228AE4DF9001729A5 /* EndPoint.swift */; };
 		BE442FF528AE4F8F001729A5 /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE442FF428AE4F8F001729A5 /* NetworkError.swift */; };
 		BE442FF728AE501B001729A5 /* ImageData.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE442FF628AE501B001729A5 /* ImageData.swift */; };
+		BE442FFA28AE5345001729A5 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE442FF928AE5345001729A5 /* HomeViewModel.swift */; };
+		BE442FFC28AE5373001729A5 /* HttpClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE442FFB28AE5373001729A5 /* HttpClient.swift */; };
+		BE442FFE28AE5542001729A5 /* ImageRowViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE442FFD28AE5542001729A5 /* ImageRowViewModel.swift */; };
+		BE44300128AE58C8001729A5 /* ImageCacheManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE44300028AE58C8001729A5 /* ImageCacheManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,6 +33,10 @@
 		BE442FF228AE4DF9001729A5 /* EndPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndPoint.swift; sourceTree = "<group>"; };
 		BE442FF428AE4F8F001729A5 /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
 		BE442FF628AE501B001729A5 /* ImageData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageData.swift; sourceTree = "<group>"; };
+		BE442FF928AE5345001729A5 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
+		BE442FFB28AE5373001729A5 /* HttpClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HttpClient.swift; sourceTree = "<group>"; };
+		BE442FFD28AE5542001729A5 /* ImageRowViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageRowViewModel.swift; sourceTree = "<group>"; };
+		BE44300028AE58C8001729A5 /* ImageCacheManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCacheManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +70,8 @@
 			isa = PBXGroup;
 			children = (
 				BE442FDC28AE4935001729A5 /* ImageGalleryApp.swift */,
+				BE442FFF28AE58AB001729A5 /* Managers */,
+				BE442FF828AE532B001729A5 /* ViewModels */,
 				BE442FEA28AE4993001729A5 /* Views */,
 				BE442FED28AE4D64001729A5 /* Networkings */,
 				BE442FE028AE4935001729A5 /* Assets.xcassets */,
@@ -93,9 +103,27 @@
 				BE442FF628AE501B001729A5 /* ImageData.swift */,
 				BE442FF228AE4DF9001729A5 /* EndPoint.swift */,
 				BE442FF428AE4F8F001729A5 /* NetworkError.swift */,
+				BE442FFB28AE5373001729A5 /* HttpClient.swift */,
 				BE442FF028AE4DCF001729A5 /* PicsumAPI.swift */,
 			);
 			path = Networkings;
+			sourceTree = "<group>";
+		};
+		BE442FF828AE532B001729A5 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				BE442FF928AE5345001729A5 /* HomeViewModel.swift */,
+				BE442FFD28AE5542001729A5 /* ImageRowViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		BE442FFF28AE58AB001729A5 /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				BE44300028AE58C8001729A5 /* ImageCacheManager.swift */,
+			);
+			path = Managers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -171,9 +199,13 @@
 				BE442FF728AE501B001729A5 /* ImageData.swift in Sources */,
 				BE442FDF28AE4935001729A5 /* HomeView.swift in Sources */,
 				BE442FF128AE4DCF001729A5 /* PicsumAPI.swift in Sources */,
+				BE442FFA28AE5345001729A5 /* HomeViewModel.swift in Sources */,
+				BE442FFC28AE5373001729A5 /* HttpClient.swift in Sources */,
 				BE442FF328AE4DF9001729A5 /* EndPoint.swift in Sources */,
 				BE442FF528AE4F8F001729A5 /* NetworkError.swift in Sources */,
+				BE442FFE28AE5542001729A5 /* ImageRowViewModel.swift in Sources */,
 				BE442FDD28AE4935001729A5 /* ImageGalleryApp.swift in Sources */,
+				BE44300128AE58C8001729A5 /* ImageCacheManager.swift in Sources */,
 				BE442FEC28AE4A04001729A5 /* ImageRow.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

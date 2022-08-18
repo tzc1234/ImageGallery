@@ -7,22 +7,12 @@
 
 import Foundation
 
-protocol HttpClient {
-    func request(url: URL, method: String, completion: @escaping (Data?, URLResponse?, Error?) -> Void)
+protocol ImageService {
+    func getImages(page: Int, completion: @escaping (Result<[ImageData], NetworkError>) -> Void)
+    func requestData(url: URL, method: String, completion: @escaping (Result<Data, NetworkError>) -> Void)
 }
 
-class URLSessionClient: HttpClient {
-    func request(url: URL, method: String, completion: @escaping (Data?, URLResponse?, Error?) -> Void) {
-        var urlRequest = URLRequest(url: url)
-        urlRequest.httpMethod = method
-        
-        let session = URLSession(configuration: .default)
-        let dataTask = session.dataTask(with: urlRequest, completionHandler: completion)
-        dataTask.resume()
-    }
-}
-
-class PicsumAPI {
+class PicsumAPI: ImageService {
     let client: HttpClient
     
     init(client: HttpClient) {

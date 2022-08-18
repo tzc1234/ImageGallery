@@ -8,26 +8,23 @@
 import SwiftUI
 
 struct HomeView: View {
+    @StateObject private var vm = HomeViewModel(
+        service: PicsumAPI(
+            client: URLSessionClient()))
+    
     var body: some View {
         NavigationView {
-            List(0..<20) { _ in
-                ImageRow()
+            List(vm.images) { imageData in
+                ImageRow(imageData: imageData)
                     .frame(height: UIScreen.main.bounds.width * 9/16)
             }
             .listStyle(.plain)
             .navigationTitle("Photos")
         }
         .navigationViewStyle(.stack)
-//        .onAppear {
-//            PicsumAPI(client: URLSessionClient()).getImages(page: 1) { result in
-//                switch result {
-//                case .success(let images):
-//                    print(images)
-//                case .failure(let error):
-//                    print(error.errorMessage)
-//                }
-//            }
-//        }
+        .onAppear {
+            vm.fetchImages()
+        }
         
     }
 }
