@@ -48,8 +48,6 @@ class PicsumAPI: ImageService, ImageDataService {
             return
         }
         
-        print("URL: \(url)")
-        
         client.request(url: url, method: endPoint.method) { data, response, error in
             guard error == nil else {
                 completion(.failure(.unspecified(error: error!)))

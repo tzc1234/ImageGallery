@@ -73,6 +73,7 @@
 				BE442FFF28AE58AB001729A5 /* Managers */,
 				BE442FF828AE532B001729A5 /* ViewModels */,
 				BE442FEA28AE4993001729A5 /* Views */,
+				BE44300228AE60F6001729A5 /* Models */,
 				BE442FED28AE4D64001729A5 /* Networkings */,
 				BE442FE028AE4935001729A5 /* Assets.xcassets */,
 				BE442FE228AE4935001729A5 /* Preview Content */,
@@ -100,7 +101,6 @@
 		BE442FED28AE4D64001729A5 /* Networkings */ = {
 			isa = PBXGroup;
 			children = (
-				BE442FF628AE501B001729A5 /* ImageData.swift */,
 				BE442FF228AE4DF9001729A5 /* EndPoint.swift */,
 				BE442FF428AE4F8F001729A5 /* NetworkError.swift */,
 				BE442FFB28AE5373001729A5 /* HttpClient.swift */,
@@ -124,6 +124,14 @@
 				BE44300028AE58C8001729A5 /* ImageCacheManager.swift */,
 			);
 			path = Managers;
+			sourceTree = "<group>";
+		};
+		BE44300228AE60F6001729A5 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				BE442FF628AE501B001729A5 /* ImageData.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
