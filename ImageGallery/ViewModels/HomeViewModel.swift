@@ -21,7 +21,10 @@ class HomeViewModel: ObservableObject {
     }
     
     func fetchImages(refresh: Bool = false) {
-        if refresh { page = 1 }
+        if refresh {
+            page = 1
+            images = []
+        }
         
         guard page <= totalPage else { return }
         
