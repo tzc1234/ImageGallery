@@ -9,11 +9,14 @@ import Foundation
 
 protocol ImageService {
     func getImages(page: Int, completion: @escaping (Result<[ImageData], NetworkError>) -> Void)
+}
+
+protocol ImageDataService {
     func getImageData(imageData: ImageData, completion: @escaping (Result<Data, NetworkError>) -> Void)
 }
 
-class PicsumAPI: ImageService {
-    let client: HttpClient
+class PicsumAPI: ImageService, ImageDataService {
+    private let client: HttpClient
     
     init(client: HttpClient) {
         self.client = client

@@ -11,10 +11,10 @@ import UIKit
 class ImageRowViewModel: ObservableObject {
     @Published var image: UIImage?
     
-    private let service: ImageService
+    private let service: ImageDataService
     private let cacheManager: ImageCacheManager
     
-    init(service: ImageService, cacheManager: ImageCacheManager) {
+    init(service: ImageDataService, cacheManager: ImageCacheManager) {
         self.service = service
         self.cacheManager = cacheManager
     }
