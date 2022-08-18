@@ -25,9 +25,7 @@ class ImageRowViewModel: ObservableObject {
             return
         }
         
-        guard let url = URL(string: imageData.downloadURL) else { return }
-        
-        service.requestData(url: url, method: "get") { [weak self] result in
+        service.getImageData(imageData: imageData) { [weak self] result in
             DispatchQueue.main.async {
                 switch result {
                 case .success(let data):

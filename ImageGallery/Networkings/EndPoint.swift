@@ -11,12 +11,13 @@ protocol EndPoint {
     var scheme: String { get }
     var baseURL: String { get }
     var path: String { get }
-    var queryItems: [URLQueryItem] { get }
+    var queryItems: [URLQueryItem]? { get }
     var method: String { get }
 }
 
 enum PicsumEndPoint: EndPoint {
     case listImages(page: Int)
+    case imageData(imageData: ImageData)
     
     var scheme: String {
         switch self {
@@ -27,7 +28,7 @@ enum PicsumEndPoint: EndPoint {
     
     var baseURL: String {
         switch self {
-        case .listImages:
+        default:
             return "picsum.photos"
         }
     }
@@ -36,6 +37,8 @@ enum PicsumEndPoint: EndPoint {
         switch self {
         case .listImages:
             return "/v2/list"
+        case .imageData(let imageData):
+            return "/id/\(imageData.id)/390/219"
         }
     }
     
@@ -46,12 +49,14 @@ enum PicsumEndPoint: EndPoint {
         }
     }
     
-    var queryItems: [URLQueryItem] {
+    var queryItems: [URLQueryItem]? {
         switch self {
         case .listImages(let page):
             return [
                 .init(name: "page", value: "\(page)")
             ]
+        case .imageData:
+            return nil
         }
     }
 

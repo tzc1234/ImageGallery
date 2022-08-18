@@ -9,7 +9,7 @@ import Foundation
 
 protocol ImageService {
     func getImages(page: Int, completion: @escaping (Result<[ImageData], NetworkError>) -> Void)
-    func requestData(url: URL, method: String, completion: @escaping (Result<Data, NetworkError>) -> Void)
+    func getImageData(imageData: ImageData, completion: @escaping (Result<Data, NetworkError>) -> Void)
 }
 
 class PicsumAPI: ImageService {
@@ -20,14 +20,7 @@ class PicsumAPI: ImageService {
     }
     
     func getImages(page: Int, completion: @escaping (Result<[ImageData], NetworkError>) -> Void) {
-        let ep = PicsumEndPoint.listImages(page: page)
-        
-        guard let url = getURL(by: ep) else {
-            completion(.failure(.invalidURL))
-            return
-        }
-        
-        requestData(url: url, method: ep.method) { result in
+        requestData(endPoint: .listImages(page: page)) { result in
             switch result {
             case .success(let data):
                 do {
@@ -42,10 +35,19 @@ class PicsumAPI: ImageService {
         }
     }
     
-    func requestData(url: URL, method: String, completion: @escaping (Result<Data, NetworkError>) -> Void) {
+    func getImageData(imageData: ImageData, completion: @escaping (Result<Data, NetworkError>) -> Void) {
+        requestData(endPoint: .imageData(imageData: imageData), completion: completion)
+    }
+    
+    private func requestData(endPoint: PicsumEndPoint, completion: @escaping (Result<Data, NetworkError>) -> Void) {
+        guard let url = getURL(by: endPoint) else {
+            completion(.failure(.invalidURL))
+            return
+        }
+        
         print("URL: \(url)")
         
-        client.request(url: url, method: method) { data, response, error in
+        client.request(url: url, method: endPoint.method) { data, response, error in
             guard error == nil else {
                 completion(.failure(.unspecified(error: error!)))
                 return
