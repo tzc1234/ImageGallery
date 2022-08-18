@@ -35,6 +35,19 @@ struct HomeView: View {
                 shouldLoadMoreData = false
             }
         }
+        .alert(isPresented: $vm.showAlert) {
+            Alert(
+                title: Text("Network Error."),
+                message: Text("Please try again later."),
+                primaryButton: .default(
+                    Text("Refresh"),
+                    action: {
+                        vm.fetchImages(refresh: true)
+                    }
+                ),
+                secondaryButton: .cancel()
+            )
+        }
         
     }
 }
