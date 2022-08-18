@@ -12,11 +12,15 @@ struct HomeView: View {
         service: PicsumAPI(
             client: URLSessionClient()))
     
+    @State var shouldLoadMoreData = false
+    
     var body: some View {
         NavigationView {
-            List(vm.images) { imageData in
-                ImageRow(imageData: imageData)
-                    .frame(height: UIScreen.main.bounds.width * 9/16)
+            List {
+                ForEach(Array(zip(vm.images.indices, vm.images)), id: \.1.id) { index, imageData in
+                    ImageRow(imageData: imageData, isLast: index == vm.images.count-1, shouldLoadMoreData: $shouldLoadMoreData)
+                        .frame(height: UIScreen.main.bounds.width * 9/16)
+                }
             }
             .listStyle(.plain)
             .navigationTitle("Photos")
@@ -24,6 +28,12 @@ struct HomeView: View {
         .navigationViewStyle(.stack)
         .onAppear {
             vm.fetchImages()
+        }
+        .onChange(of: shouldLoadMoreData) { newValue in
+            if newValue {
+                vm.fetchImages()
+                shouldLoadMoreData = false
+            }
         }
         
     }

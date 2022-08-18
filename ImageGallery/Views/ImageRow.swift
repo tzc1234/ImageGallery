@@ -15,6 +15,8 @@ struct ImageRow: View {
         cacheManager: MainImageCacheManager.instance)
     
     let imageData: ImageData
+    let isLast: Bool
+    @Binding var shouldLoadMoreData: Bool
     
     var body: some View {
         ZStack {
@@ -32,6 +34,10 @@ struct ImageRow: View {
         .cornerRadius(20)
         .onAppear {
             vm.getImage(imageData: imageData)
+            
+            if isLast {
+                shouldLoadMoreData = true
+            }
         }
 
     }
@@ -39,6 +45,6 @@ struct ImageRow: View {
 
 struct ImageRow_Previews: PreviewProvider {
     static var previews: some View {
-        ImageRow(imageData: ImageData(id: "1", author: "1", width: 1, height: 1, url: "1", downloadURL: "1"))
+        ImageRow(imageData: ImageData(id: "1", author: "1", width: 1, height: 1, url: "1", downloadURL: "1"), isLast: false, shouldLoadMoreData: .constant(false))
     }
 }
