@@ -17,7 +17,7 @@ protocol EndPoint {
 
 enum PicsumEndPoint: EndPoint {
     case listImages(page: Int)
-    case imageData(imageModel: ImageModel)
+    case imageData(imageId: String)
     
     var scheme: String {
         switch self {
@@ -37,8 +37,8 @@ enum PicsumEndPoint: EndPoint {
         switch self {
         case .listImages:
             return "/v2/list"
-        case .imageData(let imageModel):
-            return "/id/\(imageModel.id)/390/219"
+        case .imageData(let imageId):
+            return "/id/\(imageId)/390/219"
         }
     }
     

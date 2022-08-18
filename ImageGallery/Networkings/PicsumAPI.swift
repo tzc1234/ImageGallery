@@ -12,7 +12,7 @@ protocol ImageService {
 }
 
 protocol ImageDataService {
-    func getImageData(imageModel: ImageModel, completion: @escaping (Result<Data, NetworkError>) -> Void)
+    func getImageData(imageId: String, completion: @escaping (Result<Data, NetworkError>) -> Void)
 }
 
 class PicsumAPI: ImageService, ImageDataService {
@@ -38,8 +38,8 @@ class PicsumAPI: ImageService, ImageDataService {
         }
     }
     
-    func getImageData(imageModel: ImageModel, completion: @escaping (Result<Data, NetworkError>) -> Void) {
-        requestData(endPoint: .imageData(imageModel: imageModel), completion: completion)
+    func getImageData(imageId: String, completion: @escaping (Result<Data, NetworkError>) -> Void) {
+        requestData(endPoint: .imageData(imageId: imageId), completion: completion)
     }
     
     private func requestData(endPoint: PicsumEndPoint, completion: @escaping (Result<Data, NetworkError>) -> Void) {

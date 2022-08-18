@@ -25,7 +25,7 @@ class ImageRowViewModel: ObservableObject {
             return
         }
         
-        service.getImageData(imageModel: imageModel) { [weak self] result in
+        service.getImageData(imageId: imageModel.id) { [weak self] result in
             DispatchQueue.main.async {
                 switch result {
                 case .success(let data):
