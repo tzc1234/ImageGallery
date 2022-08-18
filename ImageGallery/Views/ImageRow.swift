@@ -20,8 +20,6 @@ struct ImageRow: View {
     
     var body: some View {
         ZStack {
-            Color.green
-            
             Image(systemName: "photo")
                 .resizable()
                 .scaledToFit()
