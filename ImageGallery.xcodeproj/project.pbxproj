@@ -15,7 +15,7 @@
 		BE442FF128AE4DCF001729A5 /* PicsumAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE442FF028AE4DCF001729A5 /* PicsumAPI.swift */; };
 		BE442FF328AE4DF9001729A5 /* EndPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE442FF228AE4DF9001729A5 /* EndPoint.swift */; };
 		BE442FF528AE4F8F001729A5 /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE442FF428AE4F8F001729A5 /* NetworkError.swift */; };
-		BE442FF728AE501B001729A5 /* ImageData.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE442FF628AE501B001729A5 /* ImageData.swift */; };
+		BE442FF728AE501B001729A5 /* ImageModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE442FF628AE501B001729A5 /* ImageModel.swift */; };
 		BE442FFA28AE5345001729A5 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE442FF928AE5345001729A5 /* HomeViewModel.swift */; };
 		BE442FFC28AE5373001729A5 /* HttpClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE442FFB28AE5373001729A5 /* HttpClient.swift */; };
 		BE442FFE28AE5542001729A5 /* ImageRowViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE442FFD28AE5542001729A5 /* ImageRowViewModel.swift */; };
@@ -32,7 +32,7 @@
 		BE442FF028AE4DCF001729A5 /* PicsumAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PicsumAPI.swift; sourceTree = "<group>"; };
 		BE442FF228AE4DF9001729A5 /* EndPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndPoint.swift; sourceTree = "<group>"; };
 		BE442FF428AE4F8F001729A5 /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
-		BE442FF628AE501B001729A5 /* ImageData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageData.swift; sourceTree = "<group>"; };
+		BE442FF628AE501B001729A5 /* ImageModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageModel.swift; sourceTree = "<group>"; };
 		BE442FF928AE5345001729A5 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		BE442FFB28AE5373001729A5 /* HttpClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HttpClient.swift; sourceTree = "<group>"; };
 		BE442FFD28AE5542001729A5 /* ImageRowViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageRowViewModel.swift; sourceTree = "<group>"; };
@@ -129,7 +129,7 @@
 		BE44300228AE60F6001729A5 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				BE442FF628AE501B001729A5 /* ImageData.swift */,
+				BE442FF628AE501B001729A5 /* ImageModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -204,7 +204,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BE442FF728AE501B001729A5 /* ImageData.swift in Sources */,
+				BE442FF728AE501B001729A5 /* ImageModel.swift in Sources */,
 				BE442FDF28AE4935001729A5 /* HomeView.swift in Sources */,
 				BE442FF128AE4DCF001729A5 /* PicsumAPI.swift in Sources */,
 				BE442FFA28AE5345001729A5 /* HomeViewModel.swift in Sources */,

@@ -8,11 +8,11 @@
 import Foundation
 
 protocol ImageService {
-    func getImages(page: Int, completion: @escaping (Result<[ImageData], NetworkError>) -> Void)
+    func getImages(page: Int, completion: @escaping (Result<[ImageModel], NetworkError>) -> Void)
 }
 
 protocol ImageDataService {
-    func getImageData(imageData: ImageData, completion: @escaping (Result<Data, NetworkError>) -> Void)
+    func getImageData(imageModel: ImageModel, completion: @escaping (Result<Data, NetworkError>) -> Void)
 }
 
 class PicsumAPI: ImageService, ImageDataService {
@@ -22,12 +22,12 @@ class PicsumAPI: ImageService, ImageDataService {
         self.client = client
     }
     
-    func getImages(page: Int, completion: @escaping (Result<[ImageData], NetworkError>) -> Void) {
+    func getImages(page: Int, completion: @escaping (Result<[ImageModel], NetworkError>) -> Void) {
         requestData(endPoint: .listImages(page: page)) { result in
             switch result {
             case .success(let data):
                 do {
-                    let images = try JSONDecoder().decode([ImageData].self, from: data)
+                    let images = try JSONDecoder().decode([ImageModel].self, from: data)
                     completion(.success(images))
                 } catch {
                     completion(.failure(NetworkError.unspecified(error: error)))
@@ -38,8 +38,8 @@ class PicsumAPI: ImageService, ImageDataService {
         }
     }
     
-    func getImageData(imageData: ImageData, completion: @escaping (Result<Data, NetworkError>) -> Void) {
-        requestData(endPoint: .imageData(imageData: imageData), completion: completion)
+    func getImageData(imageModel: ImageModel, completion: @escaping (Result<Data, NetworkError>) -> Void) {
+        requestData(endPoint: .imageData(imageModel: imageModel), completion: completion)
     }
     
     private func requestData(endPoint: PicsumEndPoint, completion: @escaping (Result<Data, NetworkError>) -> Void) {

@@ -8,7 +8,7 @@
 import Foundation
 
 class HomeViewModel: ObservableObject {
-    @Published var images = [ImageData]()
+    @Published var images = [ImageModel]()
     @Published var showAlert = false
     
     private var page = 1

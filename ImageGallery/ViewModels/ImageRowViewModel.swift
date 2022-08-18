@@ -19,18 +19,18 @@ class ImageRowViewModel: ObservableObject {
         self.cacheManager = cacheManager
     }
     
-    func getImage(imageData: ImageData) {
-        if let image = cacheManager.getImage(by: imageData.id) {
+    func getImage(imageModel: ImageModel) {
+        if let image = cacheManager.getImage(by: imageModel.id) {
             self.image = image
             return
         }
         
-        service.getImageData(imageData: imageData) { [weak self] result in
+        service.getImageData(imageModel: imageModel) { [weak self] result in
             DispatchQueue.main.async {
                 switch result {
                 case .success(let data):
                     if let image = UIImage(data: data) {
-                        self?.cacheManager.add(image: image, for: imageData.id)
+                        self?.cacheManager.add(image: image, for: imageModel.id)
                         self?.image = image
                     }
                 case .failure(let error):

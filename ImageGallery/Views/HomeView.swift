@@ -17,8 +17,8 @@ struct HomeView: View {
     var body: some View {
         NavigationView {
             List {
-                ForEach(Array(zip(vm.images.indices, vm.images)), id: \.1.id) { index, imageData in
-                    ImageRow(imageData: imageData, isLast: index == vm.images.count-1, shouldLoadMoreData: $shouldLoadMoreData)
+                ForEach(Array(zip(vm.images.indices, vm.images)), id: \.1.id) { index, imageModel in
+                    ImageRow(imageModel: imageModel, isLast: index == vm.images.count-1, shouldLoadMoreData: $shouldLoadMoreData)
                         .frame(height: UIScreen.main.bounds.width * 9/16)
                 }
             }

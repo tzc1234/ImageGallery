@@ -1,5 +1,5 @@
 //
-//  ImageData.swift
+//  ImageModel.swift
 //  ImageGallery
 //
 //  Created by Tsz-Lung on 18/08/2022.
@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct ImageData: Codable, Identifiable {
+struct ImageModel: Codable, Identifiable {
     let id, author: String
     let width, height: Int
     let url, downloadURL: String

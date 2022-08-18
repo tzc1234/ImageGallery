@@ -14,7 +14,7 @@ struct ImageRow: View {
             client: URLSessionClient()),
         cacheManager: MainImageCacheManager.instance)
     
-    let imageData: ImageData
+    let imageModel: ImageModel
     let isLast: Bool
     @Binding var shouldLoadMoreData: Bool
     
@@ -31,7 +31,7 @@ struct ImageRow: View {
         }
         .cornerRadius(20)
         .onAppear {
-            vm.getImage(imageData: imageData)
+            vm.getImage(imageModel: imageModel)
             
             if isLast {
                 shouldLoadMoreData = true
@@ -43,6 +43,6 @@ struct ImageRow: View {
 
 struct ImageRow_Previews: PreviewProvider {
     static var previews: some View {
-        ImageRow(imageData: ImageData(id: "1", author: "1", width: 1, height: 1, url: "1", downloadURL: "1"), isLast: false, shouldLoadMoreData: .constant(false))
+        ImageRow(imageModel: ImageModel(id: "1", author: "1", width: 1, height: 1, url: "1", downloadURL: "1"), isLast: false, shouldLoadMoreData: .constant(false))
     }
 }
