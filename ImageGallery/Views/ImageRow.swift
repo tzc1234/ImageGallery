@@ -43,6 +43,17 @@ struct ImageRow: View {
 
 struct ImageRow_Previews: PreviewProvider {
     static var previews: some View {
-        ImageRow(imageModel: ImageModel(id: "1", author: "1", width: 1, height: 1, url: "1", downloadURL: "1"), isLast: false, shouldLoadMoreData: .constant(false))
+        ImageRow(
+            imageModel:
+                ImageModel(
+                    id: "1",
+                    author: "1",
+                    width: 1,
+                    height: 1,
+                    url: "1",
+                    downloadURL: "1"),
+            isLast: false,
+            shouldLoadMoreData: .constant(false)
+        )
     }
 }

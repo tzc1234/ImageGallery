@@ -30,7 +30,11 @@ class PicsumAPI: ImageService, ImageDataService {
                     let images = try JSONDecoder().decode([ImageModel].self, from: data)
                     completion(.success(images))
                 } catch {
-                    completion(.failure(NetworkError.unspecified(error: error)))
+                    if let decodingError = error as? DecodingError {
+                        completion(.failure(.dataDecodeFailure(error: decodingError)))
+                    } else {
+                        completion(.failure(.unspecified(error: error)))
+                    }
                 }
             case .failure(let error):
                 completion(.failure(NetworkError.unspecified(error: error)))

@@ -14,17 +14,14 @@ class HomeViewModel: ObservableObject {
     private var page = 1
     private let totalPage = 34
     
-    let service: ImageService
+    private let service: ImageService
     
     init(service: ImageService) {
         self.service = service
     }
     
     func fetchImages(refresh: Bool = false) {
-        if refresh {
-            page = 1
-            images = []
-        }
+        if refresh { resetPage() }
         
         guard page <= totalPage else { return }
         
@@ -40,6 +37,11 @@ class HomeViewModel: ObservableObject {
                 }
             }
         }
+    }
+    
+    private func resetPage() {
+        page = 1
+        images = []
     }
     
 }
