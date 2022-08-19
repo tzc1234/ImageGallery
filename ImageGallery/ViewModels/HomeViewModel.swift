@@ -10,6 +10,7 @@ import Foundation
 class HomeViewModel: ObservableObject {
     @Published var images = [ImageModel]()
     @Published var showAlert = false
+    @Published var shouldLoadMoreData = false
     
     private var page = 1
     private let totalPage = 34
@@ -42,6 +43,13 @@ class HomeViewModel: ObservableObject {
     private func resetPage() {
         page = 1
         images = []
+    }
+    
+    func loadMoreImages() {
+        if shouldLoadMoreData {
+            fetchImages()
+            shouldLoadMoreData = false
+        }
     }
     
 }

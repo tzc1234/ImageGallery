@@ -12,8 +12,6 @@ struct HomeView: View {
         service: PicsumAPI(
             client: URLSessionClient()))
     
-    @State var shouldLoadMoreData = false
-    
     var body: some View {
         NavigationView {
             List {
@@ -21,7 +19,7 @@ struct HomeView: View {
                     ImageRow(
                         imageModel: imageModel,
                         isLast: index == vm.images.count-1,
-                        shouldLoadMoreData: $shouldLoadMoreData
+                        shouldLoadMoreData: $vm.shouldLoadMoreData
                     )
                     .frame(height: UIScreen.main.bounds.width * 9/16)
                 }
@@ -33,11 +31,8 @@ struct HomeView: View {
         .onAppear {
             vm.fetchImages()
         }
-        .onChange(of: shouldLoadMoreData) { newValue in
-            if newValue {
-                vm.fetchImages()
-                shouldLoadMoreData = false
-            }
+        .onChange(of: vm.shouldLoadMoreData) { _ in
+            vm.loadMoreImages()
         }
         .alert(isPresented: $vm.showAlert) {
             Alert(
