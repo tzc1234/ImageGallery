@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		BE31462228AF8DB7006C38EE /* MainQueueImageServiceDecorator.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE31462128AF8DB7006C38EE /* MainQueueImageServiceDecorator.swift */; };
+		BE31462428AF909F006C38EE /* CacheImageDataServiceDecorator.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE31462328AF909F006C38EE /* CacheImageDataServiceDecorator.swift */; };
 		BE442FDD28AE4935001729A5 /* ImageGalleryApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE442FDC28AE4935001729A5 /* ImageGalleryApp.swift */; };
 		BE442FDF28AE4935001729A5 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE442FDE28AE4935001729A5 /* HomeView.swift */; };
 		BE442FE128AE4935001729A5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BE442FE028AE4935001729A5 /* Assets.xcassets */; };
@@ -20,11 +21,12 @@
 		BE442FFA28AE5345001729A5 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE442FF928AE5345001729A5 /* HomeViewModel.swift */; };
 		BE442FFC28AE5373001729A5 /* HttpClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE442FFB28AE5373001729A5 /* HttpClient.swift */; };
 		BE442FFE28AE5542001729A5 /* ImageRowViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE442FFD28AE5542001729A5 /* ImageRowViewModel.swift */; };
-		BE44300128AE58C8001729A5 /* ImageCacheManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE44300028AE58C8001729A5 /* ImageCacheManager.swift */; };
+		BE44300128AE58C8001729A5 /* DataCacheManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE44300028AE58C8001729A5 /* DataCacheManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		BE31462128AF8DB7006C38EE /* MainQueueImageServiceDecorator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainQueueImageServiceDecorator.swift; sourceTree = "<group>"; };
+		BE31462328AF909F006C38EE /* CacheImageDataServiceDecorator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CacheImageDataServiceDecorator.swift; sourceTree = "<group>"; };
 		BE442FD928AE4935001729A5 /* ImageGallery.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ImageGallery.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BE442FDC28AE4935001729A5 /* ImageGalleryApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageGalleryApp.swift; sourceTree = "<group>"; };
 		BE442FDE28AE4935001729A5 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
@@ -38,7 +40,7 @@
 		BE442FF928AE5345001729A5 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		BE442FFB28AE5373001729A5 /* HttpClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HttpClient.swift; sourceTree = "<group>"; };
 		BE442FFD28AE5542001729A5 /* ImageRowViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageRowViewModel.swift; sourceTree = "<group>"; };
-		BE44300028AE58C8001729A5 /* ImageCacheManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCacheManager.swift; sourceTree = "<group>"; };
+		BE44300028AE58C8001729A5 /* DataCacheManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataCacheManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +58,7 @@
 			isa = PBXGroup;
 			children = (
 				BE31462128AF8DB7006C38EE /* MainQueueImageServiceDecorator.swift */,
+				BE31462328AF909F006C38EE /* CacheImageDataServiceDecorator.swift */,
 			);
 			path = Decorators;
 			sourceTree = "<group>";
@@ -132,7 +135,7 @@
 		BE442FFF28AE58AB001729A5 /* Managers */ = {
 			isa = PBXGroup;
 			children = (
-				BE44300028AE58C8001729A5 /* ImageCacheManager.swift */,
+				BE44300028AE58C8001729A5 /* DataCacheManager.swift */,
 			);
 			path = Managers;
 			sourceTree = "<group>";
@@ -220,12 +223,13 @@
 				BE442FF128AE4DCF001729A5 /* PicsumAPI.swift in Sources */,
 				BE442FFA28AE5345001729A5 /* HomeViewModel.swift in Sources */,
 				BE442FFC28AE5373001729A5 /* HttpClient.swift in Sources */,
+				BE31462428AF909F006C38EE /* CacheImageDataServiceDecorator.swift in Sources */,
 				BE442FF328AE4DF9001729A5 /* EndPoint.swift in Sources */,
 				BE442FF528AE4F8F001729A5 /* NetworkError.swift in Sources */,
 				BE442FFE28AE5542001729A5 /* ImageRowViewModel.swift in Sources */,
 				BE31462228AF8DB7006C38EE /* MainQueueImageServiceDecorator.swift in Sources */,
 				BE442FDD28AE4935001729A5 /* ImageGalleryApp.swift in Sources */,
-				BE44300128AE58C8001729A5 /* ImageCacheManager.swift in Sources */,
+				BE44300128AE58C8001729A5 /* DataCacheManager.swift in Sources */,
 				BE442FEC28AE4A04001729A5 /* ImageRow.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
