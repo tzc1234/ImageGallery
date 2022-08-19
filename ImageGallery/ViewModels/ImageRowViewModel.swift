@@ -26,18 +26,15 @@ class ImageRowViewModel: ObservableObject {
         }
         
         service.getImageData(imageId: imageModel.id) { [weak self] result in
-            DispatchQueue.main.async {
-                switch result {
-                case .success(let data):
-                    if let image = UIImage(data: data) {
-                        self?.cacheManager.add(image: image, for: imageModel.id)
-                        self?.image = image
-                    }
-                case .failure(let error):
-                    print(error.errorMessage)
+            switch result {
+            case .success(let data):
+                if let image = UIImage(data: data) {
+                    self?.cacheManager.add(image: image, for: imageModel.id)
+                    self?.image = image
                 }
+            case .failure(let error):
+                print(error.errorMessage)
             }
-            
         }
     }
     

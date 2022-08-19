@@ -9,8 +9,9 @@ import SwiftUI
 
 struct HomeView: View {
     @StateObject private var vm = HomeViewModel(
-        service: PicsumAPI(
-            client: URLSessionClient()))
+        service: MainQueueImageServiceDecorator(
+            service: PicsumAPI(
+                client: URLSessionClient())))
     
     var body: some View {
         NavigationView {

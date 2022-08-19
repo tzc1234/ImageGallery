@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BE31462228AF8DB7006C38EE /* MainQueueImageServiceDecorator.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE31462128AF8DB7006C38EE /* MainQueueImageServiceDecorator.swift */; };
 		BE442FDD28AE4935001729A5 /* ImageGalleryApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE442FDC28AE4935001729A5 /* ImageGalleryApp.swift */; };
 		BE442FDF28AE4935001729A5 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE442FDE28AE4935001729A5 /* HomeView.swift */; };
 		BE442FE128AE4935001729A5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BE442FE028AE4935001729A5 /* Assets.xcassets */; };
@@ -23,6 +24,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		BE31462128AF8DB7006C38EE /* MainQueueImageServiceDecorator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainQueueImageServiceDecorator.swift; sourceTree = "<group>"; };
 		BE442FD928AE4935001729A5 /* ImageGallery.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ImageGallery.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BE442FDC28AE4935001729A5 /* ImageGalleryApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageGalleryApp.swift; sourceTree = "<group>"; };
 		BE442FDE28AE4935001729A5 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
@@ -50,6 +52,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		BE31462028AF8D69006C38EE /* Decorators */ = {
+			isa = PBXGroup;
+			children = (
+				BE31462128AF8DB7006C38EE /* MainQueueImageServiceDecorator.swift */,
+			);
+			path = Decorators;
+			sourceTree = "<group>";
+		};
 		BE442FD028AE4935001729A5 = {
 			isa = PBXGroup;
 			children = (
@@ -70,9 +80,10 @@
 			isa = PBXGroup;
 			children = (
 				BE442FDC28AE4935001729A5 /* ImageGalleryApp.swift */,
-				BE442FFF28AE58AB001729A5 /* Managers */,
 				BE442FF828AE532B001729A5 /* ViewModels */,
 				BE442FEA28AE4993001729A5 /* Views */,
+				BE442FFF28AE58AB001729A5 /* Managers */,
+				BE31462028AF8D69006C38EE /* Decorators */,
 				BE44300228AE60F6001729A5 /* Models */,
 				BE442FED28AE4D64001729A5 /* Networkings */,
 				BE442FE028AE4935001729A5 /* Assets.xcassets */,
@@ -212,6 +223,7 @@
 				BE442FF328AE4DF9001729A5 /* EndPoint.swift in Sources */,
 				BE442FF528AE4F8F001729A5 /* NetworkError.swift in Sources */,
 				BE442FFE28AE5542001729A5 /* ImageRowViewModel.swift in Sources */,
+				BE31462228AF8DB7006C38EE /* MainQueueImageServiceDecorator.swift in Sources */,
 				BE442FDD28AE4935001729A5 /* ImageGalleryApp.swift in Sources */,
 				BE44300128AE58C8001729A5 /* ImageCacheManager.swift in Sources */,
 				BE442FEC28AE4A04001729A5 /* ImageRow.swift in Sources */,

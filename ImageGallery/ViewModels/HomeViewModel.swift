@@ -27,15 +27,13 @@ class HomeViewModel: ObservableObject {
         guard page <= totalPage else { return }
         
         service.getImages(page: page) { [weak self] result in
-            DispatchQueue.main.async {
-                switch result {
-                case .success(let images):
-                    self?.images += images
-                    self?.page += 1
-                case .failure(let error):
-                    self?.showAlert = true
-                    print(error.errorMessage)
-                }
+            switch result {
+            case .success(let images):
+                self?.images += images
+                self?.page += 1
+            case .failure(let error):
+                self?.showAlert = true
+                print(error.errorMessage)
             }
         }
     }
