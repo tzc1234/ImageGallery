@@ -9,7 +9,6 @@ import UIKit
 
 protocol ImageCacheManager {
     func add(image: UIImage, for key: String)
-    func remove(for key: String)
     func getImage(by key: String) -> UIImage?
 }
 
@@ -26,10 +25,6 @@ class MainImageCacheManager: ImageCacheManager {
     
     func add(image: UIImage, for key: String) {
         cache.setObject(image, forKey: key as NSString)
-    }
-    
-    func remove(for key: String) {
-        cache.removeObject(forKey: key as NSString)
     }
     
     func getImage(by key: String) -> UIImage? {
