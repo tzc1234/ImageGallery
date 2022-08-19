@@ -10,11 +10,7 @@ import SwiftUI
 struct ImageRow: View {
     
     @StateObject private var vm = ImageRowViewModel(
-        service: CacheImageDataServiceDecorator(
-            service: MainQueueImageServiceDecorator(
-                service: PicsumAPI(
-                    client: URLSessionClient())),
-            cache: MainDataCacheManager.instance))
+        service: MainQueueImageServiceDecorator(service: ImageDataServiceProxy(cache: MainDataCacheManager.instance, client: URLSessionClient())))
     
     let imageModel: ImageModel
     let isLast: Bool

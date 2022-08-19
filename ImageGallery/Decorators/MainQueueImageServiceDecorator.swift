@@ -7,13 +7,15 @@
 
 import Foundation
 
-class MainQueueImageServiceDecorator: ImageService, ImageDataService {
-    private let service: ImageService & ImageDataService
+class MainQueueImageServiceDecorator<T> {
+    private let service: T
     
-    init(service: ImageService & ImageDataService) {
+    init(service: T) {
         self.service = service
     }
-    
+}
+
+extension MainQueueImageServiceDecorator: ImageService where T: ImageService {
     func getImages(page: Int, completion: @escaping (Result<[ImageModel], NetworkError>) -> Void) {
         service.getImages(page: page) { result in
             DispatchQueue.main.async {
@@ -26,7 +28,9 @@ class MainQueueImageServiceDecorator: ImageService, ImageDataService {
             }
         }
     }
-    
+}
+
+extension MainQueueImageServiceDecorator: ImageDataService where T: ImageDataService {
     func getImageData(imageId: String, completion: @escaping (Result<Data, NetworkError>) -> Void) {
         service.getImageData(imageId: imageId) { result in
             DispatchQueue.main.async {
