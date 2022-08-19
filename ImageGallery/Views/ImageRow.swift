@@ -8,9 +8,14 @@
 import SwiftUI
 
 struct ImageRow: View {
-    
     @StateObject private var vm = ImageRowViewModel(
-        service: MainQueueImageServiceDecorator(service: ImageDataServiceProxy(cache: MainDataCacheManager.instance, client: URLSessionClient())))
+        service: MainQueueDecorator(
+            decoratee: ImageDataServiceProxy(
+                cache: MainDataCacheManager.instance,
+                client: URLSessionClient()
+            )
+        )
+    )
     
     let imageModel: ImageModel
     let isLast: Bool

@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		BE31462228AF8DB7006C38EE /* MainQueueImageServiceDecorator.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE31462128AF8DB7006C38EE /* MainQueueImageServiceDecorator.swift */; };
+		BE31462228AF8DB7006C38EE /* MainQueueDecorator.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE31462128AF8DB7006C38EE /* MainQueueDecorator.swift */; };
 		BE31462428AF909F006C38EE /* ImageDataServiceProxy.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE31462328AF909F006C38EE /* ImageDataServiceProxy.swift */; };
 		BE442FDD28AE4935001729A5 /* ImageGalleryApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE442FDC28AE4935001729A5 /* ImageGalleryApp.swift */; };
 		BE442FDF28AE4935001729A5 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE442FDE28AE4935001729A5 /* HomeView.swift */; };
@@ -25,7 +25,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		BE31462128AF8DB7006C38EE /* MainQueueImageServiceDecorator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainQueueImageServiceDecorator.swift; sourceTree = "<group>"; };
+		BE31462128AF8DB7006C38EE /* MainQueueDecorator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainQueueDecorator.swift; sourceTree = "<group>"; };
 		BE31462328AF909F006C38EE /* ImageDataServiceProxy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageDataServiceProxy.swift; sourceTree = "<group>"; };
 		BE442FD928AE4935001729A5 /* ImageGallery.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ImageGallery.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BE442FDC28AE4935001729A5 /* ImageGalleryApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageGalleryApp.swift; sourceTree = "<group>"; };
@@ -57,7 +57,7 @@
 		BE31462028AF8D69006C38EE /* Decorators */ = {
 			isa = PBXGroup;
 			children = (
-				BE31462128AF8DB7006C38EE /* MainQueueImageServiceDecorator.swift */,
+				BE31462128AF8DB7006C38EE /* MainQueueDecorator.swift */,
 			);
 			path = Decorators;
 			sourceTree = "<group>";
@@ -235,7 +235,7 @@
 				BE442FF328AE4DF9001729A5 /* EndPoint.swift in Sources */,
 				BE442FF528AE4F8F001729A5 /* NetworkError.swift in Sources */,
 				BE442FFE28AE5542001729A5 /* ImageRowViewModel.swift in Sources */,
-				BE31462228AF8DB7006C38EE /* MainQueueImageServiceDecorator.swift in Sources */,
+				BE31462228AF8DB7006C38EE /* MainQueueDecorator.swift in Sources */,
 				BE442FDD28AE4935001729A5 /* ImageGalleryApp.swift in Sources */,
 				BE44300128AE58C8001729A5 /* DataCacheManager.swift in Sources */,
 				BE442FEC28AE4A04001729A5 /* ImageRow.swift in Sources */,
