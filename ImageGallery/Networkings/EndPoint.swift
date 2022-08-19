@@ -7,12 +7,16 @@
 
 import Foundation
 
+enum HttpMethod: String {
+    case get = "get"
+}
+
 protocol EndPoint {
     var scheme: String { get }
     var baseURL: String { get }
     var path: String { get }
     var queryItems: [URLQueryItem]? { get }
-    var method: String { get }
+    var method: HttpMethod { get }
 }
 
 enum PicsumEndPoint: EndPoint {
@@ -42,10 +46,10 @@ enum PicsumEndPoint: EndPoint {
         }
     }
     
-    var method: String {
+    var method: HttpMethod {
         switch self {
         default:
-            return "get"
+            return .get
         }
     }
     

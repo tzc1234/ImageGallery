@@ -8,13 +8,13 @@
 import Foundation
 
 protocol HttpClient {
-    func request(url: URL, method: String, completion: @escaping (Data?, URLResponse?, Error?) -> Void)
+    func request(url: URL, method: HttpMethod, completion: @escaping (Data?, URLResponse?, Error?) -> Void)
 }
 
 class URLSessionClient: HttpClient {
-    func request(url: URL, method: String, completion: @escaping (Data?, URLResponse?, Error?) -> Void) {
+    func request(url: URL, method: HttpMethod, completion: @escaping (Data?, URLResponse?, Error?) -> Void) {
         var urlRequest = URLRequest(url: url)
-        urlRequest.httpMethod = method
+        urlRequest.httpMethod = method.rawValue
         
         let session = URLSession(configuration: .default)
         let dataTask = session.dataTask(with: urlRequest, completionHandler: completion)
