@@ -10,7 +10,6 @@ import UIKit
 final class HomeViewModel: ObservableObject {
     @Published var images = [ImageModel]()
     @Published var showAlert = false
-    @Published var shouldLoadMoreData = false
     
     private var page = 1
     private let totalPage = 34
@@ -43,16 +42,9 @@ final class HomeViewModel: ObservableObject {
         images = []
     }
     
-    func loadMoreImages() {
-        if shouldLoadMoreData {
-            fetchImages()
-            shouldLoadMoreData = false
-        }
-    }
-    
-    var loadImage: ((String, @escaping (UIImage?) -> Void) -> Void) {
-        return { [weak self] imageId, completion in
-            self?.service.getImageData(imageId: imageId) { result in
+    func loadImage(by imageModel: ImageModel) -> ((@escaping (UIImage?) -> Void) -> Void) {
+        return { [weak self] completion in
+            self?.service.getImageData(imageId: imageModel.id) { result in
                 switch result {
                 case .success(let data):
                     let image = UIImage(data: data)!

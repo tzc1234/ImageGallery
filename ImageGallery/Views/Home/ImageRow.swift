@@ -10,10 +10,8 @@ import SwiftUI
 struct ImageRow: View {
     @State private var image: UIImage?
     
-    let imageModel: ImageModel
-    let isLast: Bool
-    @Binding var shouldLoadMoreData: Bool
-    let loadImage: ((String, @escaping (UIImage?) -> Void) -> Void)
+    let loadImage: (@escaping (UIImage?) -> Void) -> Void
+    let loadMoreImageModels: () -> Void
     
     var body: some View {
         ZStack {
@@ -28,25 +26,14 @@ struct ImageRow: View {
         }
         .cornerRadius(20)
         .onAppear {
-            loadImage(imageModel.id) { image in
-                self.image = image
-            }
-            
-            if isLast {
-                shouldLoadMoreData = true
-            }
+            loadImage { image = $0 }
+            loadMoreImageModels()
         }
-
     }
 }
 
 struct ImageRow_Previews: PreviewProvider {
     static var previews: some View {
-        ImageRow(
-            imageModel: ImageModel.dummy,
-            isLast: false,
-            shouldLoadMoreData: .constant(false),
-            loadImage: { _,_ in }
-        )
+        ImageRow(loadImage: { _ in }, loadMoreImageModels: {})
     }
 }

@@ -25,10 +25,8 @@ struct HomeView: View {
                         ImageDetailView(imageModel: imageModel)
                     } label: {
                         ImageRow(
-                            imageModel: imageModel,
-                            isLast: index == vm.images.count-1,
-                            shouldLoadMoreData: $vm.shouldLoadMoreData,
-                            loadImage: vm.loadImage
+                            loadImage: vm.loadImage(by: imageModel),
+                            loadMoreImageModels: index == vm.images.count-1 ? { vm.fetchImages() } : {}
                         )
                         .frame(height: UIScreen.main.bounds.width * 9/16)
                     }
@@ -40,9 +38,6 @@ struct HomeView: View {
         .navigationViewStyle(.stack)
         .onAppear {
             vm.fetchImages()
-        }
-        .onChange(of: vm.shouldLoadMoreData) { _ in
-            vm.loadMoreImages()
         }
         .alert(isPresented: $vm.showAlert) {
             Alert(
