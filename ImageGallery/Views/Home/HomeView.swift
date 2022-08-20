@@ -26,7 +26,7 @@ struct HomeView: View {
                     } label: {
                         ImageRow(
                             loadImage: vm.loadImage(by: imageModel),
-                            loadMoreImageModels: index == vm.images.count-1 ? { vm.fetchImages() } : {}
+                            loadMoreImageModels: index == vm.images.count-1 ? { vm.fetchImages() } : nil
                         )
                         .frame(height: UIScreen.main.bounds.width * 9/16)
                     }

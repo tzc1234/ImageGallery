@@ -11,7 +11,7 @@ struct ImageRow: View {
     @State private var image: UIImage?
     
     let loadImage: (@escaping (UIImage?) -> Void) -> Void
-    let loadMoreImageModels: () -> Void
+    let loadMoreImageModels: (() -> Void)?
     
     var body: some View {
         ZStack {
@@ -27,13 +27,13 @@ struct ImageRow: View {
         .cornerRadius(20)
         .onAppear {
             loadImage { image = $0 }
-            loadMoreImageModels()
+            loadMoreImageModels?()
         }
     }
 }
 
 struct ImageRow_Previews: PreviewProvider {
     static var previews: some View {
-        ImageRow(loadImage: { _ in }, loadMoreImageModels: {})
+        ImageRow(loadImage: { _ in }, loadMoreImageModels: nil)
     }
 }
