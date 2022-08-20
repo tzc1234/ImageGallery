@@ -5,7 +5,7 @@
 //  Created by Tsz-Lung on 18/08/2022.
 //
 
-import Foundation
+import UIKit
 
 final class HomeViewModel: ObservableObject {
     @Published var images = [ImageModel]()
@@ -15,9 +15,9 @@ final class HomeViewModel: ObservableObject {
     private var page = 1
     private let totalPage = 34
     
-    private let service: ImageService
+    private let service: ImagesService
     
-    init(service: ImageService) {
+    init(service: ImagesService) {
         self.service = service
     }
     
@@ -47,6 +47,20 @@ final class HomeViewModel: ObservableObject {
         if shouldLoadMoreData {
             fetchImages()
             shouldLoadMoreData = false
+        }
+    }
+    
+    var loadImage: ((String, @escaping (UIImage?) -> Void) -> Void) {
+        return { [weak self] imageId, completion in
+            self?.service.getImageData(imageId: imageId) { result in
+                switch result {
+                case .success(let data):
+                    let image = UIImage(data: data)!
+                    completion(image)
+                case .failure:
+                    completion(nil)
+                }
+            }
         }
     }
     

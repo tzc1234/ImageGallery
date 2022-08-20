@@ -10,8 +10,12 @@ import SwiftUI
 struct HomeView: View {
     @StateObject private var vm = HomeViewModel(
         service: MainQueueDecorator(
-            decoratee: PicsumAPI(
-                client: URLSessionClient())))
+            decoratee: PicsumAPIProxy(
+                cache: MainDataCacheManager.instance,
+                client: URLSessionClient()
+            )
+        )
+    )
     
     var body: some View {
         NavigationView {
@@ -23,7 +27,8 @@ struct HomeView: View {
                         ImageRow(
                             imageModel: imageModel,
                             isLast: index == vm.images.count-1,
-                            shouldLoadMoreData: $vm.shouldLoadMoreData
+                            shouldLoadMoreData: $vm.shouldLoadMoreData,
+                            loadImage: vm.loadImage
                         )
                         .frame(height: UIScreen.main.bounds.width * 9/16)
                     }

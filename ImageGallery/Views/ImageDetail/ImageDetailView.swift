@@ -50,7 +50,7 @@ struct ImageDetailView: View {
                 .padding(.horizontal)
                 
             }
-            .navigationTitle("Image Details")
+            .navigationTitle("Image Detail")
             .navigationBarTitleDisplayMode(.inline)
             
         }

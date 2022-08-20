@@ -15,6 +15,8 @@ protocol ImageDataService {
     func getImageData(imageId: String, completion: @escaping (Result<Data, NetworkError>) -> Void)
 }
 
+typealias ImagesService = ImageService & ImageDataService
+
 class PicsumAPI: ImageService, ImageDataService {
     private let client: HttpClient
     

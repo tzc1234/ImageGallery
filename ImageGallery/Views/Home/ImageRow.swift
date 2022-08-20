@@ -8,18 +8,12 @@
 import SwiftUI
 
 struct ImageRow: View {
-    @StateObject private var vm = ImageRowViewModel(
-        service: MainQueueDecorator(
-            decoratee: PicsumAPIProxy(
-                cache: MainDataCacheManager.instance,
-                client: URLSessionClient()
-            )
-        )
-    )
+    @State private var image: UIImage?
     
     let imageModel: ImageModel
     let isLast: Bool
     @Binding var shouldLoadMoreData: Bool
+    let loadImage: ((String, @escaping (UIImage?) -> Void) -> Void)
     
     var body: some View {
         ZStack {
@@ -29,12 +23,14 @@ struct ImageRow: View {
                 .foregroundColor(.gray)
                 .scaleEffect(0.5)
             
-            Image(uiImage: vm.image ?? UIImage())
+            Image(uiImage: image ?? UIImage())
                 .resizable()
         }
         .cornerRadius(20)
         .onAppear {
-            vm.getImage(imageModel: imageModel)
+            loadImage(imageModel.id) { image in
+                self.image = image
+            }
             
             if isLast {
                 shouldLoadMoreData = true
@@ -49,7 +45,8 @@ struct ImageRow_Previews: PreviewProvider {
         ImageRow(
             imageModel: ImageModel.dummy,
             isLast: false,
-            shouldLoadMoreData: .constant(false)
+            shouldLoadMoreData: .constant(false),
+            loadImage: { _,_ in }
         )
     }
 }
