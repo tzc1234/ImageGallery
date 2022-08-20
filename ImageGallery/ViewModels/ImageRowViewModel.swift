@@ -8,7 +8,7 @@
 import Foundation
 import UIKit
 
-class ImageRowViewModel: ObservableObject {
+final class ImageRowViewModel: ObservableObject {
     @Published var image: UIImage?
     
     private let service: ImageDataService

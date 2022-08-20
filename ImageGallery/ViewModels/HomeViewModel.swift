@@ -7,7 +7,7 @@
 
 import Foundation
 
-class HomeViewModel: ObservableObject {
+final class HomeViewModel: ObservableObject {
     @Published var images = [ImageModel]()
     @Published var showAlert = false
     @Published var shouldLoadMoreData = false
