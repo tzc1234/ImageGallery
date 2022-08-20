@@ -43,9 +43,9 @@ struct ImageDetailView: View {
                         .frame(maxWidth: .infinity, alignment: .leading)
                         .font(.title2)
                     
-                    Text(imageModel.url)
+                    Link(imageModel.url, destination: URL(string: imageModel.url)!)
                         .frame(maxWidth: .infinity, alignment: .leading)
-                        .font(.headline)
+                        .font(.caption.weight(.semibold))
                 }
                 .padding(.horizontal)
                 
