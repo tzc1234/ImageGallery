@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		BE31462228AF8DB7006C38EE /* MainQueueDecorator.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE31462128AF8DB7006C38EE /* MainQueueDecorator.swift */; };
-		BE31462428AF909F006C38EE /* ImageDataServiceProxy.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE31462328AF909F006C38EE /* ImageDataServiceProxy.swift */; };
+		BE31462428AF909F006C38EE /* PicsumAPIProxy.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE31462328AF909F006C38EE /* PicsumAPIProxy.swift */; };
 		BE442FDD28AE4935001729A5 /* ImageGalleryApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE442FDC28AE4935001729A5 /* ImageGalleryApp.swift */; };
 		BE442FDF28AE4935001729A5 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE442FDE28AE4935001729A5 /* HomeView.swift */; };
 		BE442FE128AE4935001729A5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BE442FE028AE4935001729A5 /* Assets.xcassets */; };
@@ -28,7 +28,7 @@
 
 /* Begin PBXFileReference section */
 		BE31462128AF8DB7006C38EE /* MainQueueDecorator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainQueueDecorator.swift; sourceTree = "<group>"; };
-		BE31462328AF909F006C38EE /* ImageDataServiceProxy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageDataServiceProxy.swift; sourceTree = "<group>"; };
+		BE31462328AF909F006C38EE /* PicsumAPIProxy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PicsumAPIProxy.swift; sourceTree = "<group>"; };
 		BE442FD928AE4935001729A5 /* ImageGallery.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ImageGallery.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BE442FDC28AE4935001729A5 /* ImageGalleryApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageGalleryApp.swift; sourceTree = "<group>"; };
 		BE442FDE28AE4935001729A5 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
@@ -69,7 +69,7 @@
 		BE31462528AFB366006C38EE /* Proxies */ = {
 			isa = PBXGroup;
 			children = (
-				BE31462328AF909F006C38EE /* ImageDataServiceProxy.swift */,
+				BE31462328AF909F006C38EE /* PicsumAPIProxy.swift */,
 			);
 			path = Proxies;
 			sourceTree = "<group>";
@@ -247,7 +247,7 @@
 				BE442FF128AE4DCF001729A5 /* PicsumAPI.swift in Sources */,
 				BE442FFA28AE5345001729A5 /* HomeViewModel.swift in Sources */,
 				BE442FFC28AE5373001729A5 /* HttpClient.swift in Sources */,
-				BE31462428AF909F006C38EE /* ImageDataServiceProxy.swift in Sources */,
+				BE31462428AF909F006C38EE /* PicsumAPIProxy.swift in Sources */,
 				BE442FF328AE4DF9001729A5 /* EndPoint.swift in Sources */,
 				BE442FF528AE4F8F001729A5 /* NetworkError.swift in Sources */,
 				BE442FFE28AE5542001729A5 /* ImageRowViewModel.swift in Sources */,

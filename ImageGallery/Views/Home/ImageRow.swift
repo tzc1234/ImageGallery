@@ -10,7 +10,7 @@ import SwiftUI
 struct ImageRow: View {
     @StateObject private var vm = ImageRowViewModel(
         service: MainQueueDecorator(
-            decoratee: ImageDataServiceProxy(
+            decoratee: PicsumAPIProxy(
                 cache: MainDataCacheManager.instance,
                 client: URLSessionClient()
             )
