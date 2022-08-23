@@ -8,7 +8,7 @@
 import UIKit
 
 final class ImageDetailViewModel: ObservableObject {
-    @Published var image: UIImage?
+    @Published private(set) var image: UIImage?
     
     private let service: ImageDataService
     

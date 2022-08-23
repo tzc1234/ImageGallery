@@ -10,10 +10,10 @@ import Foundation
 class PicsumAPIProxy {
     private lazy var api: PicsumAPI = PicsumAPI(client: client)
     
-    private let cache: DataCacheManager
+    private let cache: DataCache
     private let client: HttpClient
     
-    init(cache: DataCacheManager, client: HttpClient) {
+    init(cache: DataCache, client: HttpClient) {
         self.cache = cache
         self.client = client
     }

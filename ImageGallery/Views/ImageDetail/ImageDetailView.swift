@@ -12,7 +12,7 @@ struct ImageDetailView: View {
         service: MainQueueDecorator(
             decoratee:
                 PicsumAPIProxy(
-                    cache: MainDataCacheManager.instance,
+                    cache: NSDataCache.instance,
                     client: URLSessionClient()
                 )
         )

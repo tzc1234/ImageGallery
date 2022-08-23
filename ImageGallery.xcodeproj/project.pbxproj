@@ -20,7 +20,7 @@
 		BE442FF728AE501B001729A5 /* ImageModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE442FF628AE501B001729A5 /* ImageModel.swift */; };
 		BE442FFA28AE5345001729A5 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE442FF928AE5345001729A5 /* HomeViewModel.swift */; };
 		BE442FFC28AE5373001729A5 /* HttpClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE442FFB28AE5373001729A5 /* HttpClient.swift */; };
-		BE44300128AE58C8001729A5 /* DataCacheManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE44300028AE58C8001729A5 /* DataCacheManager.swift */; };
+		BE44300128AE58C8001729A5 /* DataCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE44300028AE58C8001729A5 /* DataCache.swift */; };
 		BE51AF6228B0CF6F009D102B /* ImageDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE51AF6128B0CF6F009D102B /* ImageDetailView.swift */; };
 		BE51AF6428B0D301009D102B /* ImageDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE51AF6328B0D301009D102B /* ImageDetailViewModel.swift */; };
 /* End PBXBuildFile section */
@@ -40,7 +40,7 @@
 		BE442FF628AE501B001729A5 /* ImageModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageModel.swift; sourceTree = "<group>"; };
 		BE442FF928AE5345001729A5 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		BE442FFB28AE5373001729A5 /* HttpClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HttpClient.swift; sourceTree = "<group>"; };
-		BE44300028AE58C8001729A5 /* DataCacheManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataCacheManager.swift; sourceTree = "<group>"; };
+		BE44300028AE58C8001729A5 /* DataCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataCache.swift; sourceTree = "<group>"; };
 		BE51AF6128B0CF6F009D102B /* ImageDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageDetailView.swift; sourceTree = "<group>"; };
 		BE51AF6328B0D301009D102B /* ImageDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageDetailViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -92,13 +92,10 @@
 			isa = PBXGroup;
 			children = (
 				BE442FDC28AE4935001729A5 /* ImageGalleryApp.swift */,
-				BE442FF828AE532B001729A5 /* ViewModels */,
 				BE442FEA28AE4993001729A5 /* Views */,
-				BE442FFF28AE58AB001729A5 /* Managers */,
-				BE31462028AF8D69006C38EE /* Decorators */,
-				BE31462528AFB366006C38EE /* Proxies */,
 				BE44300228AE60F6001729A5 /* Models */,
 				BE442FED28AE4D64001729A5 /* Networkings */,
+				BE442FFF28AE58AB001729A5 /* Helpers */,
 				BE442FE028AE4935001729A5 /* Assets.xcassets */,
 				BE442FE228AE4935001729A5 /* Preview Content */,
 			);
@@ -116,6 +113,7 @@
 		BE442FEA28AE4993001729A5 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				BE442FF828AE532B001729A5 /* ViewModels */,
 				BE51AF6028B0CF4F009D102B /* Home */,
 				BE51AF6528B0F405009D102B /* ImageDetail */,
 			);
@@ -142,12 +140,14 @@
 			path = ViewModels;
 			sourceTree = "<group>";
 		};
-		BE442FFF28AE58AB001729A5 /* Managers */ = {
+		BE442FFF28AE58AB001729A5 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
-				BE44300028AE58C8001729A5 /* DataCacheManager.swift */,
+				BE31462028AF8D69006C38EE /* Decorators */,
+				BE31462528AFB366006C38EE /* Proxies */,
+				BE44300028AE58C8001729A5 /* DataCache.swift */,
 			);
-			path = Managers;
+			path = Helpers;
 			sourceTree = "<group>";
 		};
 		BE44300228AE60F6001729A5 /* Models */ = {
@@ -257,7 +257,7 @@
 				BE442FF528AE4F8F001729A5 /* NetworkError.swift in Sources */,
 				BE31462228AF8DB7006C38EE /* MainQueueDecorator.swift in Sources */,
 				BE442FDD28AE4935001729A5 /* ImageGalleryApp.swift in Sources */,
-				BE44300128AE58C8001729A5 /* DataCacheManager.swift in Sources */,
+				BE44300128AE58C8001729A5 /* DataCache.swift in Sources */,
 				BE442FEC28AE4A04001729A5 /* ImageRow.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

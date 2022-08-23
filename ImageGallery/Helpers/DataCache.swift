@@ -1,5 +1,5 @@
 //
-//  DataCacheManager.swift
+//  DataCache.swift
 //  ImageGallery
 //
 //  Created by Tsz-Lung on 18/08/2022.
@@ -7,13 +7,13 @@
 
 import Foundation
 
-protocol DataCacheManager {
+protocol DataCache {
     func add(data: Data, for key: String)
     func getData(by key: String) -> Data?
 }
 
-class MainDataCacheManager: DataCacheManager {
-    static let instance = MainDataCacheManager()
+class NSDataCache: DataCache {
+    static let instance = NSDataCache()
     private init() {}
     
     private var cache: NSCache<NSString, NSData> = {

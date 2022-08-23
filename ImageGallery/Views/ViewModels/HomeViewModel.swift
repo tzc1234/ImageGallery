@@ -8,7 +8,7 @@
 import UIKit
 
 final class HomeViewModel: ObservableObject {
-    @Published var images = [ImageModel]()
+    @Published private(set) var images = [ImageModel]()
     @Published var showAlert = false
     
     private var page = 1
