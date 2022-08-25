@@ -8,21 +8,15 @@
 import SwiftUI
 
 struct HomeView: View {
-    @StateObject private var vm = HomeViewModel(
-        service: MainQueueDecorator(
-            decoratee: PicsumAPIProxy(
-                cache: NSDataCache.instance,
-                client: URLSessionClient()
-            )
-        )
-    )
+    @StateObject var vm: HomeViewModel
+    weak var viewFactory: HomeToOtherViewFactory?
     
     var body: some View {
         NavigationView {
             List {
                 ForEach(Array(zip(vm.images.indices, vm.images)), id: \.1.id) { index, imageModel in
                     NavigationLink {
-                        ImageDetailView(imageModel: imageModel)
+                        viewFactory?.showImageDetail(by: imageModel)
                     } label: {
                         ImageRow(
                             loadImage: vm.loadImage(by: imageModel),
@@ -58,6 +52,6 @@ struct HomeView: View {
 
 struct HomeView_Previews: PreviewProvider {
     static var previews: some View {
-        HomeView()
+        HomeView(vm: PreviewStubs.instance.homeViewModel, viewFactory: nil)
     }
 }

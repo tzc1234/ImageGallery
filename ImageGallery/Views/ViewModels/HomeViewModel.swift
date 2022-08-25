@@ -47,8 +47,7 @@ final class HomeViewModel: ObservableObject {
             self?.service.getImageData(imageId: imageModel.id) { result in
                 switch result {
                 case .success(let data):
-                    let image = UIImage(data: data)!
-                    completion(image)
+                    completion(UIImage(data: data))
                 case .failure:
                     completion(nil)
                 }

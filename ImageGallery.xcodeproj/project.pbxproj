@@ -23,6 +23,7 @@
 		BE44300128AE58C8001729A5 /* DataCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE44300028AE58C8001729A5 /* DataCache.swift */; };
 		BE51AF6228B0CF6F009D102B /* ImageDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE51AF6128B0CF6F009D102B /* ImageDetailView.swift */; };
 		BE51AF6428B0D301009D102B /* ImageDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE51AF6328B0D301009D102B /* ImageDetailViewModel.swift */; };
+		BEE7BB7B28B7DCF700300D36 /* PreviewStubs.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEE7BB7A28B7DCF700300D36 /* PreviewStubs.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -43,6 +44,7 @@
 		BE44300028AE58C8001729A5 /* DataCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataCache.swift; sourceTree = "<group>"; };
 		BE51AF6128B0CF6F009D102B /* ImageDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageDetailView.swift; sourceTree = "<group>"; };
 		BE51AF6328B0D301009D102B /* ImageDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageDetailViewModel.swift; sourceTree = "<group>"; };
+		BEE7BB7A28B7DCF700300D36 /* PreviewStubs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewStubs.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,6 +107,7 @@
 		BE442FE228AE4935001729A5 /* Preview Content */ = {
 			isa = PBXGroup;
 			children = (
+				BEE7BB7A28B7DCF700300D36 /* PreviewStubs.swift */,
 				BE442FE328AE4935001729A5 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
@@ -252,6 +255,7 @@
 				BE442FF128AE4DCF001729A5 /* PicsumAPI.swift in Sources */,
 				BE442FFA28AE5345001729A5 /* HomeViewModel.swift in Sources */,
 				BE442FFC28AE5373001729A5 /* HttpClient.swift in Sources */,
+				BEE7BB7B28B7DCF700300D36 /* PreviewStubs.swift in Sources */,
 				BE31462428AF909F006C38EE /* PicsumAPIProxy.swift in Sources */,
 				BE442FF328AE4DF9001729A5 /* EndPoint.swift in Sources */,
 				BE442FF528AE4F8F001729A5 /* NetworkError.swift in Sources */,

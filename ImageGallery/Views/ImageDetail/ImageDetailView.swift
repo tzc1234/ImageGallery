@@ -8,16 +8,7 @@
 import SwiftUI
 
 struct ImageDetailView: View {
-    @StateObject var vm = ImageDetailViewModel(
-        service: MainQueueDecorator(
-            decoratee:
-                PicsumAPIProxy(
-                    cache: NSDataCache.instance,
-                    client: URLSessionClient()
-                )
-        )
-    )
-    
+    @StateObject var vm: ImageDetailViewModel
     let imageModel: ImageModel
     
     var body: some View {
@@ -59,6 +50,6 @@ struct ImageDetailView: View {
 
 struct ImageDetailView_Previews: PreviewProvider {
     static var previews: some View {
-        ImageDetailView(imageModel: ImageModel.dummy)
+        ImageDetailView(vm: PreviewStubs.instance.imageDetailViewModel, imageModel: ImageModel.preview)
     }
 }

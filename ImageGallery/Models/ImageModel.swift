@@ -16,15 +16,4 @@ struct ImageModel: Codable, Identifiable {
         case id, author, width, height, url
         case downloadURL = "download_url"
     }
-    
-    static var dummy: ImageModel {
-        ImageModel(
-            id: "id0",
-            author: "Author Name",
-            width: 1,
-            height: 1,
-            url: "www.google.com",
-            downloadURL: "1"
-        )
-    }
 }
