@@ -20,24 +20,24 @@ struct ImageGalleryApp: App {
 
 // MARK: - View Factory
 class HomeViewHierarchyFactory {
-    private lazy var service = MainQueueDecorator(
+    private let service = MainQueueDecorator(
         decoratee: PicsumAPIProxy(
             cache: NSDataCache.instance,
             client: URLSessionClient()
         )
     )
     
-    func showHome() -> HomeView {
-        HomeView(vm: HomeViewModel(service: self.service), viewFactory: self)
+    func showHome() -> AnyView {
+        AnyView(HomeView(vm: HomeViewModel(service: self.service), viewFactory: self))
     }
     
-    func showImageDetail(by imageModel: ImageModel) -> ImageDetailView {
-        ImageDetailView(vm: ImageDetailViewModel(service: self.service), imageModel: imageModel)
+    func showImageDetail(by imageModel: ImageModel) -> AnyView {
+        AnyView(ImageDetailView(vm: ImageDetailViewModel(service: self.service), imageModel: imageModel))
     }
 }
 
 protocol HomeToOtherViewFactory: AnyObject {
-    func showImageDetail(by imageModel: ImageModel) -> ImageDetailView
+    func showImageDetail(by imageModel: ImageModel) -> AnyView
 }
 
 extension HomeViewHierarchyFactory: HomeToOtherViewFactory {}
